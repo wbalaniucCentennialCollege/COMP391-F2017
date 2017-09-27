@@ -282,6 +282,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  boundary:
+    xMin: -8
+    xMax: 4
+    yMin: -4
+    yMax: 4
 --- !u!50 &755099658
 Rigidbody2D:
   serializedVersion: 4
