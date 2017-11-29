@@ -13,8 +13,12 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     // public float xMin, xMax, yMin, yMax;
     public Boundary boundary;
+    public GameObject laser;
+    public Transform laserSpawn;
 
     private Rigidbody2D rBody;
+    private float nextFire = 0.25f;
+    private float myTime = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +27,14 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        myTime += Time.deltaTime;
+
+		if(Input.GetButton("Fire1") && myTime > nextFire)
+        {
+            Instantiate(laser, laserSpawn.position, laserSpawn.rotation);
+
+            myTime = 0.0f;
+        }
 	}
 
     // Like Update but used with physics. 
