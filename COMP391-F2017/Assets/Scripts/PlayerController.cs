@@ -20,9 +20,11 @@ public class PlayerController : MonoBehaviour {
     private float nextFire = 0.25f;
     private float myTime = 0.0f;
 
+
 	// Use this for initialization
 	void Start () {
         rBody = this.GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
